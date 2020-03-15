@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>About</h1>
+    {{ request.user }}
+    <p>This is a template</p>
+
+    <h3>{{ myText|capfirst|upper }}</h3>
+
+    <p>
+        {{ myText }} - {{myNumber}} - {{Lest}}
+    </p>
+
+    {{daHtml}}
+
+    <ul>
+    {% for Le in Lest %}
+        <li>{{ forloop.counter }} - {{ Le }}</li>
+
+        {% if Le == 1 %}
+        <li>{{ Le|add:22 }}</li>
+        {% elif Le == 2 %}
+        <li>This is the else if side</li>
+        {% else %}
+        <li><P>BuiltIn filters to do that magic stuff</P> {{ Le|add:2 }}</li>
+        {% endif %}
+
+     {% endfor %}
+    </ul>
+{% endblock %}
