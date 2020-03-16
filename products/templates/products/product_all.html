@@ -1,0 +1,14 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+{{ object }}
+
+{% for instance in object %}
+
+    <p> {{ instance.id }} - {{ instance.title }}</p>
+
+{% endfor %}
+
+{% endblock %}
