@@ -6,8 +6,6 @@ from .forms import ProductForm,RawProductForm
 # Create your views here.
 from .models import Product
 
-
-
 #def product_create_view(request):
 #
     #my_form = RawProductForm()
@@ -54,7 +52,7 @@ def product_create_view(request):
     form = ProductForm(request.POST or None)
     if form.is_valid():
         form.save()
-        form = ProductForm()
+        form = ProductForm() #Renders initial form
 
     context = { "form" :  form 
     }
